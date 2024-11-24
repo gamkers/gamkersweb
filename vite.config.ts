@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  base: '/', // Replace <repository-name> with your GitHub repository name
+  base: '/gamkersweb/', // Replace <repository-name> with your GitHub repository name
   plugins: [react()],
   resolve: {
     alias: {
