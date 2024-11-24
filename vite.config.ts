@@ -1,4 +1,4 @@
-import path from 'path';
+import { resolve } from 'path'; // Import 'resolve' from 'path'
 import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
 
@@ -6,10 +6,13 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src'),
+      '@': resolve(__dirname, './src'), // Alias for 'src' directory
     },
   },
   optimizeDeps: {
-    exclude: ['lucide-react'],
+    exclude: ['lucide-react'], // Exclude 'lucide-react' from dependency pre-bundling
+  },
+  build: {
+    outDir: 'build', // Set the output directory to 'build'
   },
 });
