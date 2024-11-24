@@ -1,18 +1,19 @@
-import { resolve } from 'path'; // Import 'resolve' from 'path'
+import { resolve } from 'path';
 import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
+  base: '/gamkersweb/', // Replace <repository-name> with your GitHub repository name
   plugins: [react()],
   resolve: {
     alias: {
-      '@': resolve(__dirname, './src'), // Alias for 'src' directory
+      '@': resolve(__dirname, './src'),
     },
   },
   optimizeDeps: {
-    exclude: ['lucide-react'], // Exclude 'lucide-react' from dependency pre-bundling
+    exclude: ['lucide-react'],
   },
   build: {
-    outDir: 'build', // Set the output directory to 'build'
+    outDir: 'build', // Output to 'build' directory
   },
 });
