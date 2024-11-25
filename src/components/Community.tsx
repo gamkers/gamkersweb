@@ -8,19 +8,22 @@ const socialLinks = [
     icon: Instagram,
     stats: '200k+ followers',
     link: 'https://www.instagram.com/gamkers/',
+    image: 'https://images.unsplash.com/photo-1611262588024-d12430b98920?q=80&w=500&auto=format&fit=crop'
   },
   {
     platform: 'Discord',
     icon: MessageCircle,
     stats: 'Join our server',
     link: 'https://discord.gg/hmtHepaX',
+    image: 'https://images.unsplash.com/photo-1614680376739-414d95ff43df?q=80&w=500&auto=format&fit=crop'
   },
 ];
 
 export default function Community() {
   return (
-    <section id="community" className="py-16 bg-muted/50">
-      <div className="container mx-auto px-4">
+    <section id="community" className="py-16 relative overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-indigo-900/20 via-background to-background" />
+      <div className="container mx-auto px-4 relative">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -43,8 +46,20 @@ export default function Community() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="group"
             >
-              <Card className="group hover:shadow-lg transition-all duration-300 hover:border-primary/50">
+              <Card className="group-hover:shadow-lg transition-all duration-300 group-hover:border-primary/50 overflow-hidden">
+                <div className="relative h-48">
+                  <img 
+                    src={social.image} 
+                    alt={social.platform}
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <social.icon className="w-16 h-16 text-white opacity-75 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300" />
+                  </div>
+                </div>
                 <CardHeader>
                   <div className="flex items-center gap-4">
                     <social.icon className="w-8 h-8 text-primary group-hover:scale-110 transition-transform duration-300" />

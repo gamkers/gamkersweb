@@ -5,8 +5,9 @@ import { Button } from './ui/button';
 
 export default function Courses() {
   return (
-    <section id="courses" className="py-16">
-      <div className="container mx-auto px-4">
+    <section id="courses" className="py-16 relative overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-emerald-900/20 via-background to-background" />
+      <div className="container mx-auto px-4 relative">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -25,6 +26,14 @@ export default function Courses() {
           transition={{ duration: 0.5 }}
         >
           <Card className="max-w-2xl mx-auto overflow-hidden group hover:border-primary/50 transition-colors">
+            <div className="relative h-48">
+              <img 
+                src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?q=80&w=2000&auto=format&fit=crop"
+                alt="Python Programming"
+                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent" />
+            </div>
             <CardHeader className="relative">
               <div className="absolute top-4 right-4">
                 <Code2 className="w-8 h-8 text-primary animate-pulse" />

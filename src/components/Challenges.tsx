@@ -5,8 +5,9 @@ import { Button } from './ui/button';
 
 export default function Challenges() {
   return (
-    <section id="challenges" className="py-16">
-      <div className="container mx-auto px-4">
+    <section id="challenges" className="py-16 relative overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_var(--tw-gradient-stops))] from-rose-900/20 via-background to-background" />
+      <div className="container mx-auto px-4 relative">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -25,7 +26,15 @@ export default function Challenges() {
           transition={{ duration: 0.5 }}
           className="max-w-2xl mx-auto"
         >
-          <Card className="group hover:shadow-lg transition-all duration-300 hover:border-primary/50">
+          <Card className="group hover:shadow-lg transition-all duration-300 hover:border-primary/50 overflow-hidden">
+            <div className="relative h-48">
+              <img 
+                src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2000&auto=format&fit=crop"
+                alt="Networking Challenge"
+                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent" />
+            </div>
             <CardHeader>
               <div className="flex items-center gap-4">
                 <Network className="w-8 h-8 text-primary" />

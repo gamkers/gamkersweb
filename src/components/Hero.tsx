@@ -2,10 +2,21 @@ import { motion } from 'framer-motion';
 import { Button } from './ui/button';
 import { Shield } from 'lucide-react';
 
+const floatingAnimation = {
+  y: [-10, 10],
+  transition: {
+    duration: 2,
+    repeat: Infinity,
+    repeatType: "reverse" as const,
+    ease: "easeInOut"
+  }
+};
+
 export default function Hero() {
   return (
-    <section id="home" className="pt-24 pb-16 md:pt-32 md:pb-24">
-      <div className="container mx-auto px-4">
+    <section id="home" className="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-purple-900/20 via-background to-background" />
+      <div className="container mx-auto px-4 relative">
         <div className="flex flex-col md:flex-row items-center justify-between gap-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -30,10 +41,13 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="flex-1 relative"
           >
-            <div className="relative w-full aspect-square max-w-md mx-auto">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full animate-pulse" />
-              <Shield className="w-full h-full text-primary animate-float" />
-            </div>
+            <motion.div 
+              className="relative w-full aspect-square max-w-md mx-auto"
+              animate={floatingAnimation}
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full blur-xl" />
+              <Shield className="w-full h-full text-primary" />
+            </motion.div>
           </motion.div>
         </div>
       </div>
