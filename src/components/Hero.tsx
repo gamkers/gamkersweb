@@ -14,8 +14,7 @@ const floatingAnimation = {
 
 export default function Hero() {
   return (
-    <section id="home" className="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-purple-900/20 via-background to-background" />
+    <section id="home" className="relative min-h-screen flex items-center justify-center py-24 md:py-32 overflow-hidden gradient-bg-hero">
       <div className="container mx-auto px-4 relative">
         <div className="flex flex-col md:flex-row items-center justify-between gap-12">
           <motion.div
@@ -30,7 +29,11 @@ export default function Hero() {
             <p className="text-xl text-muted-foreground mb-8">
               Join our community of cybersecurity enthusiasts and start your journey towards becoming a security expert.
             </p>
-            <Button size="lg" className="animate-pulse">
+            <Button 
+              size="lg" 
+              className="animate-pulse"
+              onClick={() => window.location.href = '#products'}
+            >
               Explore Now
             </Button>
           </motion.div>

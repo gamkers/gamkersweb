@@ -5,7 +5,7 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from './ui/
 const products = [
   {
     title: 'GamkersGPT',
-    description: 'Advanced AI-powered Cyber assistant',
+    description: 'Advanced AI-powered learning assistant',
     icon: Brain,
     link: 'https://gamkersgpt.studentbae.in/',
     image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=500&auto=format&fit=crop'
@@ -28,8 +28,7 @@ const products = [
 
 export default function Products() {
   return (
-    <section id="products" className="py-16 relative overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-cyan-900/20 via-background to-background" />
+    <section id="products" className="min-h-screen flex items-center py-24 md:py-32 relative overflow-hidden gradient-bg-products section-divider">
       <div className="container mx-auto px-4 relative">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -52,7 +51,7 @@ export default function Products() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               <a href={product.link} target="_blank" rel="noopener noreferrer">
-                <Card className="group hover:shadow-lg transition-all duration-300 hover:border-primary/50 overflow-hidden">
+                <Card className="group card-shadow card-hover overflow-hidden bg-card/95">
                   <div className="relative h-48 overflow-hidden">
                     <img 
                       src={product.image} 

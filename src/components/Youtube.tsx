@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { Youtube as YoutubeIcon, Play } from 'lucide-react';
 import { Button } from './ui/button';
-import { Card } from './ui/card';
+import { Card, CardContent } from './ui/card';
 
 const featuredVideos = [
   {

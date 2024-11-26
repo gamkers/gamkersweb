@@ -34,7 +34,7 @@ export default function Footer() {
             transition={{ duration: 0.5 }}
             className="mb-16"
           >
-            <Card className="p-8 overflow-hidden relative group">
+            <Card id="newsletter" className="p-8 overflow-hidden relative group">
               <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-pink-500/10 group-hover:scale-105 transition-transform duration-500" />
               <div className="relative">
                 <h3 className="text-3xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-pink-600 text-transparent bg-clip-text">
